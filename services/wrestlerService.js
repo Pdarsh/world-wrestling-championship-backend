@@ -1,3 +1,5 @@
+const sequelize = require("sequelize");
+
 class WrestlerService {
   constructor(wrestlerModel) {
     this.wrestlerModel = wrestlerModel;
@@ -18,7 +20,7 @@ class WrestlerService {
         ],
         order: [
           ['rank', 'ASC'],
-      ],
+        ],
       });
       return wrestlers;
     } catch (err) {
@@ -65,23 +67,29 @@ class WrestlerService {
   //   }
   // };
 
-  // async updateUser(userData,id){
-  //   try {
-  //     const user = await this.usermodel.update(
-  //       { login: userData.login, age: userData.age, password: userData.password },
-  //       {
-  //         where: {
-  //           isdeleted: false,
-  //           id: id
-  //         },
-  //       }
-  //     );
-  //     serviceLogger('UserService', 'updateUser',id)
-  //     return user;
-  //   } catch (err) {
-  //     throw new Error("User not found");
-  //   }
-  // };
+  async updateWrestlersAfterMatch(wrestlersInvolved, winnerId) {
+    try {
+      await this.wrestlerModel.update(
+        { matches: sequelize.literal('matches + 1') },
+        {
+          where: {
+            id: wrestlersInvolved
+          },
+        }
+      );
+      await this.wrestlerModel.update(
+        { matches_won: sequelize.literal('matches + 1') },
+        {
+          where: {
+            id: winnerId
+          },
+        }
+      );
+    } catch (err) {
+      console.log(err);
+      throw new Error("Error while updating wrestlers after match");
+    }
+  };
 
   // async deleteUser(id){
   //   try {
