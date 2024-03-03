@@ -47,20 +47,18 @@ exports.getWrestlers = async (req, res) => {
 //   }
 // };
 
-// exports.updateUser = async (req, res) => {
+// exports.updateWrestlers = async (req, res) => {
 //   try {
-//     const userExist = await userServiceInstance.getUserById(req.params.id)
-//     if(userExist){
-//       const user = await userServiceInstance.updateUser(req.userData,req.params.id);
-//       return res.status(200).json({
-//         status: 200,
-//         data: user,
-//         message: "User Updated Successfully",
-//       });
-//     }
+//     // const userExist = await userServiceInstance.getUserById(req.params.id)
+//     // if(userExist){
+//     //   const user = await userServiceInstance.updateUser(req.userData,req.params.id);
+//     //   return res.status(200).json({
+//     //     status: 200,
+//     //     data: user,
+//     //     message: "User Updated Successfully",
+//     //   });
+//     // }
 //   } catch (err) {
-//     errorLoggingMiddleware('updateUser', err,req.params.id);
-
 //     return res.status(400).json({ status: 400, message: err.message });
 //   }
 // };

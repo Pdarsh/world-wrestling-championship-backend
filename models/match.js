@@ -14,14 +14,18 @@ const Match = sequelize.define('matches', {
     type: Sequelize.DATE,
     allowNull: false,
   },
-  wrestlers_involved: {
-    type: Sequelize.ARRAY(Sequelize.STRING), // Assuming you store wrestler names
+  wrestlers_involved_name: {
+    type: Sequelize.ARRAY(Sequelize.STRING), 
+    allowNull: false,
+  },
+  wrestlers_involved_id:{
+    type: Sequelize.ARRAY(Sequelize.INTEGER), 
     allowNull: false,
   },
   winner_id: {
-    type: Sequelize.ARRAY(Sequelize.INTEGER), // Store winner IDs as an array
+    type: Sequelize.ARRAY(Sequelize.INTEGER),
     allowNull: false,
   },
-});
+}, {timestamps: false});
 
 module.exports = Match;

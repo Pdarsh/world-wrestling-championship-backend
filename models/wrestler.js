@@ -29,6 +29,6 @@ const Wrestler = sequelize.define('wrestlers', {
   image_url: {
     type: Sequelize.TEXT,
   },
-});
+}, {timestamps: false});
 
 module.exports = Wrestler;
