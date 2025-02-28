@@ -6,9 +6,7 @@ Welcome to the backend repository for the World Wrestling Championship applicati
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Documentation](#api-documentation)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -41,9 +39,6 @@ To set up the project locally, follow these steps:
 
 Once the application is running, the backend server will be available at `http://localhost:4000` (or the port specified in your `.env` file). You can interact with the API using tools like Postman or by integrating it with the frontend application.
 
-## API Documentation
-
-The API provides endpoints for managing wrestlers, matches, results, and other related data. Detailed documentation for each endpoint can be found in the project's [API documentation](API_DOCUMENTATION.md).
 
 ## Contributing
 
